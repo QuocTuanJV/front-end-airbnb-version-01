@@ -10,6 +10,8 @@ import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
+import {httpInterceptorProviders} from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
