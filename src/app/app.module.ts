@@ -6,6 +6,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomePageComponent } from './component/home-page/home-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
