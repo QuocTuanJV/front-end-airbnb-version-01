@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {SignUpInfo} from '../../model/SignUpInfo';
-import {AuthService} from '../../services/auth.service';
+
 import {error} from 'util';
 import {Router} from '@angular/router';
+import {SignUpInfo} from '../../model/auth/SignUpInfo';
+import {AuthService} from '../../services/auth.service';
 
 
 @Component({
@@ -37,7 +38,7 @@ export class SignUpComponent implements OnInit {
     this.authService.signUp(this.signupInfo).subscribe(
       data => {
       alert('Register Success');
-      this.router.navigate(['/']);
+      this.goHomePage();
       this.isSignUpFailed = false;
     },
       // tslint:disable-next-line:no-shadowed-variable
@@ -48,6 +49,10 @@ export class SignUpComponent implements OnInit {
       }
     );
 
+  }
+
+  goHomePage() {
+    this.router.navigate(['/']);
   }
 
 }
