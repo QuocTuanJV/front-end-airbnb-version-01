@@ -1,25 +1,41 @@
 <div class="signup-form">
-  <form action="/examples/actions/confirmation.php" method="post">
+  <form action="/examples/actions/confirmation.php" (ngSubmit)="registerForm.form.valid && onSubmit()" #registerForm="ngForm" novalidate>
     <h2>Register</h2>
     <p class="hint-text">Create your account. It's free and only takes a minute.</p>
     <div class="form-group">
-      <input type="email" class="form-control" name="name" placeholder="Name" required="required">
+      <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="form.name" #name="ngModel" required>
+      <div *ngIf="registerForm.submitted && name.invalid">
+        <div *ngIf="name.errors.required">Name is required</div>
+      </div>
     </div>
     <div class="form-group">
-      <input type="email" class="form-control" name="username" placeholder="User Name" required="required">
+      <input type="text" class="form-control" name="username" placeholder="User Name" [(ngModel)]="form.username" #username="ngModel" required="required">
+      <div *ngIf="registerForm.submitted && username.invalid">
+        <div *ngIf="username.errors.required">Username is required</div>
+      </div>
     </div>
     <div class="form-group">
-      <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+      <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="form.email" #email="ngModel" required email>
+      <div *ngIf="registerForm.submitted && email.invalid">
+        <div *ngIf="email.errors.required">Email is required</div>
+        <div *ngIf="email.errors.email">Email must be a valid</div>
+      </div>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+      <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
+      <div *ngIf="registerForm.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
     </div>
 <!--    <div class="form-group">-->
 <!--      <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">-->
 <!--    </div>-->
     <div class="form-group">
       <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+      <div *ngIf="registerForm.submitted && isSignUpFailed" class="alert alert-warning">
+        Signup failed! <br/>{{errorMessage}}
+      </div>
     </div>
   </form>
-<!--  <div class="text-center">Already have an account? <a href="#">Sign in</a></div>-->
 </div>
