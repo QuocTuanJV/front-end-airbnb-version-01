@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthLoginInfo} from '../../model/auth/AuthLoginInfo';
 import {AuthService} from '../../services/auth.service';
 import {TokenStorageService} from '../../services/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
 
   constructor(private authService: AuthService,
-              private tokenStorage: TokenStorageService) { }
+              private tokenStorage: TokenStorageService,
+              private route: Router) { }
 
   ngOnInit() {
   }
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
       this.tokenStorage.saveAuthorities(data.authorities);
       // get roles from token stored
       this.roles = this.tokenStorage.getAuthorities();
+      this.route.navigateByUrl('/admin');
     });
   }
 }

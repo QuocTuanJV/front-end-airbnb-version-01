@@ -37,4 +37,8 @@ export class TokenStorageService {
 
     return this.roles;
   }
+
+  getToken(): string {
+    return sessionStorage.getItem(TOKEN_KEY);
+  }
 }
