@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   form: any = {};
   private loginInfo: AuthLoginInfo;
-  roles: string[] = [];
+  // roles: string[] = [];
 
   constructor(private authService: AuthService,
               private tokenStorage: TokenStorageService,
@@ -35,18 +35,21 @@ export class LoginComponent implements OnInit {
       this.tokenStorage.saveUsername(data.username);
       this.tokenStorage.saveAuthorities(data.authorities);
       // get roles from token stored
-      this.roles = this.tokenStorage.getAuthorities();
-      this.navigateUser(this.roles);
+      // this.roles = this.tokenStorage.getAuthorities();
+      this.navigateUser();
     });
   }
 
-  navigateUser(roles: string[]): void {
-    roles.forEach( r => {
-      if (r === 'ROLE_ADMIN'){
-        this.route.navigateByUrl('/admin');
-      } else {
-        this.route.navigateByUrl('/user');
-      }
-    });
+  // navigateUser(roles: string[]): void {
+  //   roles.forEach( r => {
+  //     if (r === 'ROLE_ADMIN') {
+  //       this.route.navigateByUrl('/admin');
+  //     } else {
+  //       this.route.navigateByUrl('/user');
+  //     }
+  //   });
+  // }
+  navigateUser(): void {
+    this.route.navigateByUrl('/user');
   }
 }

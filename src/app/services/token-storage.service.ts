@@ -37,8 +37,15 @@ export class TokenStorageService {
 
     return this.roles;
   }
+  public getUsername(): string {
+    return sessionStorage.getItem(USERNAME_KEY);
+  }
 
   getToken(): string {
     return sessionStorage.getItem(TOKEN_KEY);
+  }
+
+  signOut() {
+    window.sessionStorage.clear();
   }
 }

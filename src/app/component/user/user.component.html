@@ -42,18 +42,19 @@
         <!--        </li>-->
       </ul>
       <ul class="nav navbar-nav ml-auto">
-<!--        <li class="nav-item">-->
-<!--          <a href="#" class="nav-link">Add home</a>-->
-<!--        </li>-->
+        <li *ngIf="isAdmin()" class="nav-item">
+          <a href="#" class="nav-link">Add home</a>
+        </li>
         <li class="nav-item">
           <a href="#" class="nav-link">Home List</a>
         </li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User</a>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{this.info.username}}</a>
           <div class="dropdown-menu dropdown-menu-right">
             <a href="#" class="dropdown-item">Profile</a>
             <a href="#" class="dropdown-item">Settings</a>
-            <a href="#"class="dropdown-item">Logout</a>
+            <div class="dropdown-divider">123</div>
+            <a routerLink="/"class="dropdown-item" (click)="logOut()">Logout</a>
           </div>
         </li>
       </ul>
@@ -62,4 +63,3 @@
 </div>
 </body>
 </html>
-
