@@ -36,7 +36,17 @@ export class LoginComponent implements OnInit {
       this.tokenStorage.saveAuthorities(data.authorities);
       // get roles from token stored
       this.roles = this.tokenStorage.getAuthorities();
-      this.route.navigateByUrl('/admin');
+      this.navigateUser(this.roles);
+    });
+  }
+
+  navigateUser(roles: string[]): void {
+    roles.forEach( r => {
+      if (r === 'ROLE_ADMIN'){
+        this.route.navigateByUrl('/admin');
+      } else {
+        this.route.navigateByUrl('/user');
+      }
     });
   }
 }
