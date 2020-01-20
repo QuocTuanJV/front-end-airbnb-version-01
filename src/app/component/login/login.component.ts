@@ -34,6 +34,13 @@ export class LoginComponent implements OnInit {
       this.tokenStorage.saveAuthorities(data.authorities);
       // get roles from token stored
       this.roles = this.tokenStorage.getAuthorities();
-    });
+    },
+      error => {
+        console.log(error);
+        // this.errorMessage = error.error.message;
+        // alert('The username or password is incorrect!');
+      }
+
+    );
   }
 }
