@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CateRoomService {
-  private getCateRoomUrl = 'http://localhost:8080/api/auth';
+  private getCateRoomUrl = 'http://localhost:8080/api/auth/cate-rooms';
   private addNewCateRoomUrl = 'http://localhost:8080/api/auth/add-cate-room';
   constructor(private http: HttpClient) { }
 
