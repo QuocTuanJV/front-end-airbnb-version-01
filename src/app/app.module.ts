@@ -14,6 +14,7 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import {httpInterceptorProviders} from './auth-interceptor';
 import {Permissions} from './services/deactive/permissions';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
+import { LoadcateComponent } from './component/loadcate/loadcate.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AuthGuardService} from './services/deactive/auth-guard.service';
     HomePageComponent,
     LoginComponent,
     UserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoadcateComponent
   ],
   imports: [
     BrowserModule,
