@@ -1,0 +1,65 @@
+<!--<div class="input-group mb-3">-->
+<!--  <div class="custom-file">-->
+<!--    <input (change)="selectImage($event)" type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">-->
+<!--    <label class="custom-file-label" for="inputGroupFile04">Chose image</label>-->
+<!--  </div>-->
+<!--  <div class="input-group-append">-->
+<!--&lt;!&ndash;    <button (click)="uploadImage()" [disabled]="!fotoSeleccionada" class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Subir</button>&ndash;&gt;-->
+<!--<button (click)="uploadImage()"class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="signup-form">-->
+<!--  <form (ngSubmit)="registerForm.form.valid && onSubmit()" #registerForm="ngForm" novalidate>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="name" id="name" placeholder="Name" [(ngModel)]="form.name" #name="ngModel">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="price" id="price" placeholder="Price" [(ngModel)]="form.price" #price="ngModel">-->
+<!--    </div>-->
+<!--    <div class="input-group mb-3">-->
+<!--      <div class="custom-file">-->
+<!--        <input (change)="selectImage($event)" type="file" class="custom-file-input" id="image" aria-describedby="inputGroupFileAddon04">-->
+<!--        <label class="custom-file-label" for="image">Chose image</label>-->
+<!--      </div>-->
+<!--      <div class="input-group-append">-->
+<!--        <button (click)="uploadImage()"class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+
+<div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" class="form-control" id="price" placeholder="Enter price" formControlName="price">
+  </div>
+<!--  <div class="input-group mb-3">-->
+<!--    <div class="custom-file">-->
+<!--      <input (change)="selectImage($event)" type="file" class="custom-file-input" id="image" formControlName="image" aria-describedby="inputGroupFileAddon04">-->
+<!--      <label class="custom-file-label" for="image">Chose image</label>-->
+<!--    </div>-->
+<!--    <div class="input-group-append">-->
+<!--      <button (click)="uploadImage()"class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="form-group">
+<!--    <label for="image">Avatar</label>-->
+    <input type="file" (change)="selectImage($event)" #fileInput>
+<!--    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>-->
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+  </div>
+
+</form>
+</div>

@@ -6,6 +6,7 @@ import {LoginComponent} from './component/login/login.component';
 import {UserComponent} from './component/user/user.component';
 import {NotFoundComponent} from './component/not-found/not-found.component';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
+import {FileComponent} from './component/file/file.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'not-found', component: NotFoundComponent
+  },
+  {
+    path: 'upload', component: FileComponent
   }
   ];
 

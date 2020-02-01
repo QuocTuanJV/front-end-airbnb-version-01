@@ -6,7 +6,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
-import {FormsModule} from '@angular/forms';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
 import { UserComponent } from './component/user/user.component';
@@ -14,6 +14,7 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
 import {httpInterceptorProviders} from './auth-interceptor';
 import {Permissions} from './services/deactive/permissions';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
+import { FileComponent } from './component/file/file.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +24,17 @@ import {AuthGuardService} from './services/deactive/auth-guard.service';
     HomePageComponent,
     LoginComponent,
     UserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [httpInterceptorProviders, Permissions, AuthGuardService],
+  providers: [httpInterceptorProviders, Permissions, AuthGuardService, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
