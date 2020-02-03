@@ -43,23 +43,17 @@
     <label for="price">Price</label>
     <input type="text" class="form-control" id="price" placeholder="Enter price" formControlName="price">
   </div>
-<!--  <div class="input-group mb-3">-->
-<!--    <div class="custom-file">-->
-<!--      <input (change)="selectImage($event)" type="file" class="custom-file-input" id="image" formControlName="image" aria-describedby="inputGroupFileAddon04">-->
-<!--      <label class="custom-file-label" for="image">Chose image</label>-->
-<!--    </div>-->
-<!--    <div class="input-group-append">-->
-<!--      <button (click)="uploadImage()"class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div *ngIf="urlImagePreview">
+    <img [src]="urlImagePreview" height="200"><br/>
+  </div>
   <div class="form-group">
-<!--    <label for="image">Avatar</label>-->
     <input type="file" (change)="selectImage($event)" #fileInput>
-<!--    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>-->
   </div>
   <div class="form-group">
     <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
   </div>
-
 </form>
+</div>
+<div  *ngFor="let home of homes">
+  <img *ngIf="home.image" src="http://localhost:8080/api/auth/uploads/img/{{home.image}}" alt="{{home.image}}" class="img-thumbnail rounded">
 </div>
