@@ -7,8 +7,8 @@ import {UserComponent} from './component/user/user.component';
 import {NotFoundComponent} from './component/not-found/not-found.component';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
 
-import {FileComponent} from './component/file/file.component';
 import {LoadcateComponent} from './component/loadcate/loadcate.component';
+import {FileComponent} from './component/file/file.component';
 
 
 const routes: Routes = [
