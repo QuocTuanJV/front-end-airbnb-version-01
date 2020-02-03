@@ -15,6 +15,8 @@ import {httpInterceptorProviders} from './auth-interceptor';
 import {Permissions} from './services/deactive/permissions';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
 import { FileComponent } from './component/file/file.component';
+import { LoadcateComponent } from './component/loadcate/loadcate.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FileComponent } from './component/file/file.component';
     LoginComponent,
     UserComponent,
     NotFoundComponent,
-    FileComponent
+    FileComponent,
+    LoadcateComponent
   ],
   imports: [
     BrowserModule,
