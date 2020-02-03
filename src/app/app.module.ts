@@ -16,6 +16,7 @@ import {Permissions} from './services/deactive/permissions';
 import {AuthGuardService} from './services/deactive/auth-guard.service';
 import { LoadcateComponent } from './component/loadcate/loadcate.component';
 import {FileComponent} from './component/file/file.component';
+import { AddHomeComponent } from './component/add-home/add-home.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {FileComponent} from './component/file/file.component';
     UserComponent,
     NotFoundComponent,
     FileComponent,
-    LoadcateComponent
+    LoadcateComponent,
+    AddHomeComponent
   ],
   imports: [
     BrowserModule,
