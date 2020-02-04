@@ -1,0 +1,21 @@
+<div class="input-group mb-3">
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option *ngFor="let cate of cateRoom" value="{{cate.nameCateRoom}}">{{cate.nameCateRoom}}</option>
+  </select>
+</div>
+
+<div class="signup-form">
+  <form (ngSubmit)="registerForm.form.valid && onSubmit()" #registerForm="ngForm" novalidate>
+    <div class="form-group">
+      <input type="text" class="form-control" name="nameCateRoom" placeholder="Name" [(ngModel)]="form.nameCateRoom" #nameCateRoom="ngModel">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+      <!--      <div *ngIf="registerForm.submitted && isSignUpFailed" class="alert alert-warning">-->
+      <!--        Signup failed! <br/>{{errorMessage}}-->
+      <!--      </div>-->
+    </div>
+  </form>
+</div>

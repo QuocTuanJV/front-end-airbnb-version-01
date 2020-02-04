@@ -17,6 +17,8 @@ import {AuthGuardService} from './services/deactive/auth-guard.service';
 import { LoadcateComponent } from './component/loadcate/loadcate.component';
 import {FileComponent} from './component/file/file.component';
 import { AddHomeComponent } from './component/add-home/add-home.component';
+import { AddCategoryRoomComponent } from './component/add-category-room/add-category-room.component';
+import { AddCategoryHomeComponent } from './component/add-category-home/add-category-home.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { AddHomeComponent } from './component/add-home/add-home.component';
     NotFoundComponent,
     FileComponent,
     LoadcateComponent,
-    AddHomeComponent
+    AddHomeComponent,
+    AddCategoryRoomComponent,
+    AddCategoryHomeComponent
   ],
   imports: [
     BrowserModule,
