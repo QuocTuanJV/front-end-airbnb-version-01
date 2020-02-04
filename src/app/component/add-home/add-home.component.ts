@@ -1,8 +1,8 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CateRoomService} from '../../cate-room.service';
-import {CateHomeService} from '../../services/cate-home.service';
 import {HomeService} from '../../services/home.service';
+import {CateHomeService} from '../../services/cate-home.service';
 
 @Component({
   selector: 'app-add-home',
