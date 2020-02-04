@@ -44,7 +44,7 @@ export class AddHomeComponent implements OnInit {
   onSubmit() {
     console.log(this.homeForm);
     this.homeService.saveHome(this.getHomeInfoRegistration()).subscribe(data => {
-      console.log(data);
+      alert('Home is created successfully!');
     });
     this.clearForm();
   }
