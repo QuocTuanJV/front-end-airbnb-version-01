@@ -42,8 +42,13 @@
         <!--        </li>-->
       </ul>
       <ul class="nav navbar-nav ml-auto">
-        <li *ngIf="isAdmin()" class="nav-item">
-          <a href="#" class="nav-link">Add home</a>
+        <li *ngIf="isAdmin()" class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Manage</a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a routerLink="/add-cate-room" class="dropdown-item">Add category Room</a>
+            <a routerLink="/add-cate-home" class="dropdown-item">Add category Home</a>
+            <a routerLink="/add-home" class="dropdown-item">Add home</a>
+          </div>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">Home List</a>
