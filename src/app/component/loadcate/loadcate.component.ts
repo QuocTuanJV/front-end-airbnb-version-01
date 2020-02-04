@@ -7,8 +7,8 @@ import {CateRoomService} from '../../cate-room.service';
   styleUrls: ['./loadcate.component.css']
 })
 export class LoadcateComponent implements OnInit {
-  cateRoom: Cateroom[] = [];
-  cateRoomRegisInfo: Cateroom;
+  cateRoom: CateRoom[] = [];
+  cateRoomRegisInfo: CateRoom;
   form: any = {};
   constructor(private cateRoomService: CateRoomService) { }
 

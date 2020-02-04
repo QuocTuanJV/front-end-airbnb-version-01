@@ -15,11 +15,11 @@ export class CateRoomService {
   private addNewCateRoomUrl = 'http://localhost:8080/api/auth/add-cate-room';
   constructor(private http: HttpClient) { }
 
-  getCate(): Observable<Cateroom[]> {
-    return this.http.get<Cateroom[]>(this.getCateRoomUrl);
+  getCate(): Observable<CateRoom[]> {
+    return this.http.get<CateRoom[]>(this.getCateRoomUrl);
   }
 
-  addNewCateRoom(cateRoomRegisInfo: Cateroom): Observable<string> {
+  addNewCateRoom(cateRoomRegisInfo: CateRoom): Observable<string> {
     return this.http.post<string>(this.addNewCateRoomUrl, cateRoomRegisInfo);
   }
 }

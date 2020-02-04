@@ -1,1 +1,57 @@
-<p>add-home works!</p>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" class="form-control" placeholder="Enter address" formControlName="address">
+    </div>
+    <div class="form-group">
+      <label>Number Bath Room</label>
+      <input type="number" class="form-control" placeholder="Enter number bath room" formControlName="numberBath">
+    </div>
+    <div class="form-group">
+      <label>Number Bad Room</label>
+      <input type="number" class="form-control" placeholder="Enter number bad room" formControlName="numberBad">
+    </div>
+
+
+    <div class="form-group mb-3">
+      <label>Category Room</label>
+      <select class="custom-select" id="inputGroupSelect01" formControlName="cateRoom" type="text">
+        <option selected>Choose...</option>
+        <option *ngFor="let cateRoom of cateRooms" value="{{cateRoom.id}}">{{cateRoom.nameCateRoom}}</option>
+      </select>
+    </div>
+    <div class="form-group mb-3">
+      <label>Category Home</label>
+      <select class="custom-select" id="inputGroupSelect02" formControlName="cateHome" type="text">
+        <option selected>Choose...</option>
+        <option *ngFor="let cateHome of cateHomes" value="{{cateHome.id}}">{{cateHome.nameCateHome}}</option>
+      </select>
+    </div>
+
+
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea type="text" class="form-control" placeholder="Enter description..." formControlName="description">
+      </textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" placeholder="Enter price" formControlName="price">
+    </div>
+    <div *ngIf="urlImagePreview" class="input-group mb-3">
+      <img [src]="urlImagePreview" height="200"><br/>
+    </div>
+    <div class="form-group">
+      <input type="file" (change)="selectImage($event)" #fileInput>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+    </div>
+  </form>
+</div>

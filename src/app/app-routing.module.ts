@@ -9,6 +9,7 @@ import {AuthGuardService} from './services/deactive/auth-guard.service';
 
 import {LoadcateComponent} from './component/loadcate/loadcate.component';
 import {FileComponent} from './component/file/file.component';
+import {AddHomeComponent} from './component/add-home/add-home.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,9 @@ const routes: Routes = [
   },
   {
     path: 'drop', component: LoadcateComponent
+  },
+  {
+    path: 'add-home', component: AddHomeComponent
   }
   ];
 

@@ -1,4 +1,4 @@
-interface Cateroom {
+interface CateRoom {
   id?: string;
   nameCateRoom?: string;
 }
