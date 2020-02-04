@@ -10,6 +10,8 @@ import {AuthGuardService} from './services/deactive/auth-guard.service';
 import {LoadcateComponent} from './component/loadcate/loadcate.component';
 import {FileComponent} from './component/file/file.component';
 import {AddHomeComponent} from './component/add-home/add-home.component';
+import {AddCategoryRoomComponent} from './component/add-category-room/add-category-room.component';
+import {AddCategoryHomeComponent} from './component/add-category-home/add-category-home.component';
 
 
 const routes: Routes = [
@@ -35,7 +37,10 @@ const routes: Routes = [
     path: 'upload', component: FileComponent
   },
   {
-    path: 'drop', component: LoadcateComponent
+    path: 'add-cate-room', component: AddCategoryRoomComponent
+  },
+  {
+    path: 'add-cate-home', component: AddCategoryHomeComponent
   },
   {
     path: 'add-home', component: AddHomeComponent
