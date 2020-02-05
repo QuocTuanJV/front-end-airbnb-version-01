@@ -50,6 +50,6 @@ export class LoginComponent implements OnInit {
   //   });
   // }
   navigateUser(): void {
-    this.route.navigateByUrl('/user');
+    this.route.navigateByUrl('/');
   }
 }

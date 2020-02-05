@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TokenStorageService} from '../../services/token-storage.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  info: any;
 
-  constructor() { }
+  constructor(private token: TokenStorageService) { }
 
   ngOnInit() {
+    this.info = {
+        token: this.token.getToken()
+    };
   }
 
 }

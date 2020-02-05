@@ -27,7 +27,8 @@ export class UserComponent implements OnInit {
     this.navigateAfterLogOut();
   }
   navigateAfterLogOut() {
-    this.route.navigateByUrl('/');
+    // this.route.navigateByUrl('/');
+    window.location.reload();
   }
   isAdmin(): boolean {
     const isAdmin = this.roles.find(r => r === 'ROLE_ADMIN');
