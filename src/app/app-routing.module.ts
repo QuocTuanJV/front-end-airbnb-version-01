@@ -37,13 +37,13 @@ const routes: Routes = [
     path: 'upload', component: FileComponent
   },
   {
-    path: 'add-cate-room', component: AddCategoryRoomComponent
+    path: 'add-cate-room', component: AddCategoryRoomComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'add-cate-home', component: AddCategoryHomeComponent
+    path: 'add-cate-home', component: AddCategoryHomeComponent, canActivate: [AuthGuardService]
   },
   {
-    path: 'add-home', component: AddHomeComponent
+    path: 'add-home', component: AddHomeComponent, canActivate: [AuthGuardService]
   }
   ];
 
