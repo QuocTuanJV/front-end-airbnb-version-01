@@ -12,7 +12,8 @@ const httpOptions = {
 })
 export class HomeService {
   private urlAddHome = 'http://localhost:8080/api/auth/home/add-home';
-  private urlGetHome = 'http://localhost:8080/api/auth/homes';
+  private urlGetHomes = 'http://localhost:8080/api/auth/homes';
+  private urlGetHome = 'http://localhost:8080/api/auth/home';
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,11 @@ export class HomeService {
   }
 
   getHomes(): Observable<Home[]> {
-    return this.http.get<Home[]>(this.urlGetHome);
+    return this.http.get<Home[]>(this.urlGetHomes);
+  }
+
+  getHome(id: number): Observable<Home> {
+    const url = `${this.urlGetHome}/${id}`;
+    return this.http.get<Home>(url);
   }
 }
