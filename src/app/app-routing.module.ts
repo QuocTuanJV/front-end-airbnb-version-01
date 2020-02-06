@@ -12,6 +12,8 @@ import {FileComponent} from './component/file/file.component';
 import {AddHomeComponent} from './component/add-home/add-home.component';
 import {AddCategoryRoomComponent} from './component/add-category-room/add-category-room.component';
 import {AddCategoryHomeComponent} from './component/add-category-home/add-category-home.component';
+import {HomeListComponent} from './component/home-list/home-list.component';
+import {HomeDetailComponent} from './component/home-detail/home-detail.component';
 
 
 const routes: Routes = [
@@ -44,6 +46,12 @@ const routes: Routes = [
   },
   {
     path: 'add-home', component: AddHomeComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'home-list', component: HomeListComponent
+  },
+  {
+    path: 'home-detail/:id', component: HomeDetailComponent
   }
   ];
 

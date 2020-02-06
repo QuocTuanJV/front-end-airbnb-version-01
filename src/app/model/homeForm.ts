@@ -1,5 +1,5 @@
 interface HomeForm {
-  id?: string;
+  id?: number;
   name?: string;
   price?: number;
   address?: string;

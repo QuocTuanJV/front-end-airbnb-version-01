@@ -1,1 +1,7 @@
-<p>home-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mb-3" *ngFor="let home of homes">
+      <a routerLink="/home-detail/{{home.id}}"><img *ngIf="home.image" src="http://localhost:8080/api/auth/uploads/img/{{home.image}}" alt="{{home.image}}" class="myImg" ></a>
+    </div>
+  </div>
+</div>
