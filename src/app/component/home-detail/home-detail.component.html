@@ -1,1 +1,11 @@
-<p>home-detail works!</p>
+<div *ngIf="home.image">
+  <h3>Name: {{home.name}}</h3><br>
+  <h3>Address: {{home.address}}</h3><br>
+  <h3>Category Home: {{cateHome.nameCateHome}}</h3><br>
+  <h3>Category Room: {{cateRoom.nameCateRoom}}</h3><br>
+  <h3>Number Bath: {{home.numberBath}}</h3><br>
+  <h3>Number Bad: {{home.numberBad}}</h3><br>
+  <h3>Description: {{home.description}}</h3><br>
+  <h3>Price: {{home.price}}$</h3><br>
+  <img src="http://localhost:8080/api/auth/uploads/img/{{home.image}}" alt="{{home.image}}" class="myImg">
+</div>
