@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HomeService} from '../../services/home.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
 import {CateRoomService} from '../../cate-room.service';
 import {CateHomeService} from '../../services/cate-home.service';
+import {Observable} from 'rxjs';
+import {filter, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-detail',
@@ -13,18 +15,22 @@ export class HomeDetailComponent implements OnInit {
   home: Home = {};
   cateRoom: CateRoom = {};
   cateHome: CateHome = {};
+  state$: Observable<Home>;
+  urlBooking = '/booking/add-booking';
 
   constructor(private homeService: HomeService,
               private cateRoomService: CateRoomService,
               private cateHomeService: CateHomeService,
-              private route: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.getHomeById();
+    this.convertDataToSendByRouterLink();
   }
 
    getHomeById() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.activatedRoute.snapshot.paramMap.get('id');
     this.homeService.getHome(id).subscribe(data => {
       this.home = data;
       this.setNameCateHomeOfHome(this.home.cateHome);
@@ -42,4 +48,17 @@ export class HomeDetailComponent implements OnInit {
     });
   }
 
+  convertDataToSendByRouterLink() {
+    this.state$ = this.router.events.pipe(
+      filter(e => e instanceof NavigationStart),
+      map(() => {
+        const currentNav = this.router.getCurrentNavigation();
+        return currentNav.extras.state;
+      })
+    );
+  }
+
+  sendHomeToBooking() {
+    this.router.navigateByUrl(this.urlBooking, {state: this.home});
+  }
 }
