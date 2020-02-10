@@ -1,0 +1,33 @@
+<!--<div >-->
+<!--  <h1>ID home booking: {{homeBooking.id}}</h1>-->
+<!--  <h2>Name booking: {{homeBooking.name}}</h2>-->
+<!--  -->
+<!--</div>-->
+<div >
+  <h1>ID home booking: {{homeBooking.id}}</h1>
+  <h1>ID User Book:</h1>
+</div>
+<div>
+  <form (ngSubmit)="choseDate.form.valid && onSubmit()" #choseDate="ngForm" novalidate>
+    <div class="form-group">
+      <label>Time check in</label>
+      <input type="date" class="form-control" name="timeBook" placeholder="Chose time book in" [(ngModel)]="form.timeBook" #timeBook="ngModel" required>
+      <div *ngIf="choseDate.submitted && timeBook.invalid">
+        <div *ngIf="timeBook.errors.required">Date is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Time check out</label>
+      <input type="date" class="form-control" name="timeBookOut" placeholder="Chose time book out" [(ngModel)]="form.timeBookOut" #timeBookOut="ngModel" required>
+      <div *ngIf="choseDate.submitted && timeBookOut.invalid">
+        <div *ngIf="timeBookOut.errors.required">Date is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Booking</button>
+    </div>
+  </form>
+</div>
+
+
+

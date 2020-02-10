@@ -21,6 +21,7 @@ import { AddCategoryRoomComponent } from './component/add-category-room/add-cate
 import { AddCategoryHomeComponent } from './component/add-category-home/add-category-home.component';
 import { HomeListComponent } from './component/home-list/home-list.component';
 import { HomeDetailComponent } from './component/home-detail/home-detail.component';
+import { BookingDetailComponent } from './component/booking-detail/booking-detail.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HomeDetailComponent } from './component/home-detail/home-detail.compone
     AddCategoryRoomComponent,
     AddCategoryHomeComponent,
     HomeListComponent,
-    HomeDetailComponent
+    HomeDetailComponent,
+    BookingDetailComponent
   ],
   imports: [
     BrowserModule,
