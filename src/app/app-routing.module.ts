@@ -15,6 +15,7 @@ import {AddCategoryHomeComponent} from './component/add-category-home/add-catego
 import {BookingDetailComponent} from './component/booking-detail/booking-detail.component';
 import {HomeListComponent} from './component/home-list/home-list.component';
 import {HomeDetailComponent} from './component/home-detail/home-detail.component';
+import {ListMyBookingComponent} from './component/list-my-booking/list-my-booking.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,9 @@ const routes: Routes = [
   // },
   {
     path: 'booking/add-booking', component: BookingDetailComponent
+  },
+  {
+    path: 'user/my-booking', component: ListMyBookingComponent
   }
   ];
 

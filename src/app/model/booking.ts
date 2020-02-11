@@ -4,4 +4,5 @@ interface Booking {
   idHome?: number;
   timeBook?: any;
   timeBookOut?: any;
+  statusBook?: number;
 }

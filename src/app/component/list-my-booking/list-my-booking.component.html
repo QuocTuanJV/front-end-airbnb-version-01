@@ -1,0 +1,15 @@
+<h1>List my booking</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mb-3">
+      <ng-container *ngFor="let booking of this.createMyBookieInfo(this.bookies,this.homes)">
+        <div *ngIf="this.isDisplayMyListBooking(booking.status)">
+          <h1>Id booking: {{booking.id}}</h1>
+          <h1>Id home: {{booking.home.name}}</h1>
+          <button (click)="cancelBooking(+booking.id)">Cancel</button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
