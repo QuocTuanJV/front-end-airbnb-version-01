@@ -15,6 +15,7 @@ export class BookingDetailComponent implements OnInit {
   homeBooking: Home = {};
   bookingInfo: Booking = {};
   userNameBooking = '';
+  valueStatusBook = 0;
   idUserBooking = 0;
   form: any = {};
   constructor(private activatedRoute: ActivatedRoute,
@@ -37,7 +38,8 @@ export class BookingDetailComponent implements OnInit {
         idUser: this.idUserBooking,
         idHome: this.homeBooking.id,
         timeBook: this.form.timeBook,
-        timeBookOut: this.form.timeBookOut
+        timeBookOut: this.form.timeBookOut,
+        statusBook: this.valueStatusBook
       };
     });
   }
@@ -68,4 +70,5 @@ export class BookingDetailComponent implements OnInit {
   goHomePage() {
     this.router.navigate(['/']);
   }
+
 }
