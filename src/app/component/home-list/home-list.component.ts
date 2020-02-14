@@ -8,7 +8,6 @@ import {HomeService} from '../../services/home.service';
 })
 export class HomeListComponent implements OnInit {
   homes: Home[] = [];
-
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
@@ -20,6 +19,12 @@ export class HomeListComponent implements OnInit {
     });
   }
 
-
+  isDisplay(home: Home): boolean {
+    if (home.statusHome === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

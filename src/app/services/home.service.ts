@@ -14,6 +14,7 @@ export class HomeService {
   private urlAddHome = 'http://localhost:8080/api/auth/home/add-home';
   private urlGetHomes = 'http://localhost:8080/api/auth/homes';
   private urlGetHome = 'http://localhost:8080/api/auth/home';
+  private urlUpdateStatusHome = 'http://localhost:8080/api/auth/booking/update-status';
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +30,10 @@ export class HomeService {
   getHome(id: number): Observable<Home> {
     const url = `${this.urlGetHome}/${id}`;
     return this.http.get<Home>(url);
+  }
+
+  updateStatus(id: any): Observable<any> {
+    const url = `${this.urlUpdateStatusHome}/${id}`;
+    return this.http.patch<any>(url, httpOptions);
   }
 }

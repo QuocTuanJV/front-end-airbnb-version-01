@@ -4,6 +4,7 @@ import {ActivatedRoute, NavigationStart, Router} from '@angular/router';
 import {filter, map} from 'rxjs/operators';
 import {TokenStorageService} from '../../services/token-storage.service';
 import {BookingService} from '../../services/booking.service';
+import {HomeService} from '../../services/home.service';
 
 @Component({
   selector: 'app-booking-detail',
@@ -21,6 +22,7 @@ export class BookingDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private tokenStorageService: TokenStorageService,
               private bookingService: BookingService,
+              private homeService: HomeService,
               private router: Router) { }
 
   ngOnInit() {
@@ -50,6 +52,7 @@ export class BookingDetailComponent implements OnInit {
     console.log('id Home booking: ' + this.bookingInfo.idHome);
     console.log('Time booking: ' + this.bookingInfo.timeBook);
     this.createBooking(this.bookingInfo);
+    this.updateStatusHomeById(this.bookingInfo.idHome);
   }
 
   setIdUserBooking(nameUser: any) {
@@ -67,6 +70,11 @@ export class BookingDetailComponent implements OnInit {
     });
   }
 
+  updateStatusHomeById(id: any): void {
+    this.homeService.updateStatus(id).subscribe(result => {
+      console.log('home id = ' + this.bookingInfo.idHome + 'is disable');
+    });
+  }
   goHomePage() {
     this.router.navigate(['/']);
   }

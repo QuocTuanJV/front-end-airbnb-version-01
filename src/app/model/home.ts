@@ -9,4 +9,5 @@ interface Home {
   numberBad?: number;
   cateRoom?: string;
   cateHome?: string;
+  statusHome?: number;
 }
