@@ -16,6 +16,7 @@ import {BookingDetailComponent} from './component/booking-detail/booking-detail.
 import {HomeListComponent} from './component/home-list/home-list.component';
 import {HomeDetailComponent} from './component/home-detail/home-detail.component';
 import {ListMyBookingComponent} from './component/list-my-booking/list-my-booking.component';
+import {CommentDetailComponent} from './component/comment-detail/comment-detail.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,9 @@ const routes: Routes = [
   },
   {
     path: 'user/my-booking', component: ListMyBookingComponent
+  },
+  {
+    path: 'comment', component: CommentDetailComponent
   }
   ];
 

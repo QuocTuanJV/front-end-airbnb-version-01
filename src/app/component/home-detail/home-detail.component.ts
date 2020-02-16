@@ -5,6 +5,7 @@ import {CateRoomService} from '../../cate-room.service';
 import {CateHomeService} from '../../services/cate-home.service';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators';
+import {CommentService} from '../../services/comment.service';
 
 @Component({
   selector: 'app-home-detail',
@@ -12,6 +13,8 @@ import {filter, map} from 'rxjs/operators';
   styleUrls: ['./home-detail.component.css']
 })
 export class HomeDetailComponent implements OnInit {
+  comments: Comment[] = [];
+  commentInfo: Comment;
   home: Home = {};
   cateRoom: CateRoom = {};
   cateHome: CateHome = {};
@@ -22,11 +25,13 @@ export class HomeDetailComponent implements OnInit {
               private cateRoomService: CateRoomService,
               private cateHomeService: CateHomeService,
               private activatedRoute: ActivatedRoute,
+              private commentService: CommentService,
               private router: Router) { }
 
   ngOnInit() {
     this.getHomeById();
     this.convertDataToSendByRouterLink();
+    this.getComment();
   }
 
    getHomeById() {
@@ -56,6 +61,13 @@ export class HomeDetailComponent implements OnInit {
         return currentNav.extras.state;
       })
     );
+  }
+
+  getComment() {
+    const id = +this.activatedRoute.snapshot.paramMap.get('id');
+    this.commentService.getCommentByIdHome(id).subscribe(result => {
+     this.comments = result;
+    });
   }
 
   sendHomeToBooking() {

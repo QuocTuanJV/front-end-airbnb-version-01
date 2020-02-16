@@ -23,6 +23,7 @@ import { HomeListComponent } from './component/home-list/home-list.component';
 import { HomeDetailComponent } from './component/home-detail/home-detail.component';
 import { BookingDetailComponent } from './component/booking-detail/booking-detail.component';
 import { ListMyBookingComponent } from './component/list-my-booking/list-my-booking.component';
+import { CommentDetailComponent } from './component/comment-detail/comment-detail.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ListMyBookingComponent } from './component/list-my-booking/list-my-book
     HomeListComponent,
     HomeDetailComponent,
     BookingDetailComponent,
-    ListMyBookingComponent
+    ListMyBookingComponent,
+    CommentDetailComponent
   ],
   imports: [
     BrowserModule,

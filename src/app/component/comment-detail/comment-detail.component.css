@@ -1,6 +1,5 @@
-.myImg {
-  max-width: 200px;
-  max-height: 200px;
+.card-inner{
+  margin-left: 4rem;
 }
 .detailBox {
   width:320px;
